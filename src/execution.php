@@ -168,6 +168,8 @@ class ezcWorkflowDatabaseExecution extends ezcWorkflowExecution
      */
     protected function doStart( $parentId )
     {
+        $this->db->setTransactionNestingLevel(1);
+        
         $this->db->beginTransaction();
 
         $query = $this->db->createInsertQuery();
@@ -196,6 +198,8 @@ class ezcWorkflowDatabaseExecution extends ezcWorkflowExecution
     {
         $this->cleanupTable( 'execution_state' );
 
+        $this->db->setTransactionNestingLevel(1);
+        
         $query = $this->db->createUpdateQuery();
 
         $query->update( $this->db->quoteIdentifier( $this->options['prefix'] . 'execution' ) )

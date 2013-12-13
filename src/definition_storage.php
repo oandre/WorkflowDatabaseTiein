@@ -365,6 +365,8 @@ class ezcWorkflowDatabaseDefinitionStorage implements ezcWorkflowDefinitionStora
         // Verify the workflow.
         $workflow->verify();
 
+        $this->db->setTransactionNestingLevel(0);
+        
         $this->db->beginTransaction();
 
         // Calculate new version number.
