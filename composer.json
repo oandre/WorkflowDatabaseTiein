@@ -37,9 +37,9 @@
         ]
     },
     "description": "Contains the database backend for the Workflow component.",
-    "homepage": "https://github.com/zetacomponents",
+    "homepage": "https://github.com/oandre",
     "license": "Apache-2.0",
-    "name": "zetacomponents/workflow-database-tiein",
+    "name": "oandre/workflow-database-tiein",
     "type": "library",
         "require": {
             "zetacomponents/base": "*"
